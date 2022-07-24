@@ -1,20 +1,8 @@
 const TelegramApi = require('node-telegram-bot-api')
-const initializeApp = require('firebase/app')
 
-const telegramBotToken = '5315746315:AAFvb1W-YmifbCWJYfeYajGTfGli3HtqrfQ'
+const token = '5315746315:AAFvb1W-YmifbCWJYfeYajGTfGli3HtqrfQ'
 
-const bot = new TelegramApi(telegramBotToken, { polling: true })
-
-const firebaseConfig = {
-  apiKey: "AIzaSyA-qvOtMKZHR-Rlz7336xOwIi2LeauLOuk",
-  authDomain: "usa-fee-calculator-bot.firebaseapp.com",
-  projectId: "usa-fee-calculator-bot",
-  storageBucket: "usa-fee-calculator-bot.appspot.com",
-  messagingSenderId: "258909441388",
-  appId: "1:258909441388:web:b2875583c2e9e02d3fb749"
-};
-
-const app = initializeApp(firebaseConfig);
+const bot = new TelegramApi(token, { polling: true })
 
 const getSum = (price) => {
   const priceCarAndAuctionFee = price + (price * 0.07)
